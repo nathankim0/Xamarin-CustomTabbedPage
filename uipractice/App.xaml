@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="uipractice.App">
+    <Application.Resources>
+
+
+        <!--  Nathan Colors  -->
+        <Color x:Key="TitleBarColor">#FFFFFF</Color>
+        <Color x:Key="WhiteColor">#FFFFFF</Color>
+        <Color x:Key="BlackColor">#000000</Color>
+        <Color x:Key="SelectedColor">#000000</Color>
+        <Color x:Key="UnSelectedColor">#a2a2a2</Color>
+        <Color x:Key="LightBackgroundColor">#FFFFFF</Color>
+        <Color x:Key="DarkBackgroundColor">#000000</Color>
+
+        
+        <!--  Nathan Styles  -->
+        <Style x:Key="PictureFrame" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="{StaticResource WhiteColor}" />
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HeightRequest" Value="60"/>
+            <Setter Property="WidthRequest" Value="60"/>
+            <Setter Property="IsClippedToBounds" Value="True"/>
+            <Setter Property="BorderColor" Value="Transparent" />
+            <Setter Property="CornerRadius" Value="30" />
+            <Setter Property="HasShadow" Value="False" />
+        </Style>
+
+        <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource DarkBackgroundColor}, Light={StaticResource LightBackgroundColor}}" />
+        </Style>
+
+        <Style TargetType="CollectionView" ApplyToDerivedTypes="True">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource DarkBackgroundColor}, Light={StaticResource LightBackgroundColor}}" />
+        </Style>
+
+        <Style x:Key="ContentsGrid" TargetType="Grid" >
+            <Setter Property="Padding" Value="30,20,30,0"/>
+            <Setter Property="RowSpacing" Value="0"/>
+            <Setter Property="ColumnSpacing" Value="0"/>
+        </Style>
+
+        <Style x:Key="CollectionLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource WhiteColor},Light={StaticResource BlackColor}}"/>
+        </Style>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="uipractice.Views.MainTabbedPage"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:views="clr-namespace:uipractice.Views"
+            xmlns:fonts="clr-namespace:uipractice.Fonts"
+            android:TabbedPage.IsSwipePagingEnabled="False"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.IsSmoothScrollEnabled="False"
+            android:TabbedPage.OffscreenPageLimit="4"
+            ios:Page.UseSafeArea="True"
+            ios:Page.PrefersHomeIndicatorAutoHidden="True"
+            NavigationPage.BackButtonTitle=""
+            NavigationPage.HasNavigationBar="False"
+            BarBackgroundColor="{StaticResource WhiteColor}"
+            SelectedTabColor="{AppThemeBinding Dark={StaticResource WhiteColor},Light={StaticResource BlackColor}}"
+            UnselectedTabColor="{StaticResource UnSelectedColor}"
+            
+            Visual="Material">
+
+    <views:Page1Page>
+        <views:Page1Page.IconImageSource>
+            <FontImageSource FontFamily="materialdesignicons" Glyph="{x:Static fonts:FontIcons.Home}" />
+        </views:Page1Page.IconImageSource>
+    </views:Page1Page>
+
+    <views:Page2Page>
+        <views:Page2Page.IconImageSource>
+            <FontImageSource FontFamily="materialdesignicons" Glyph="{x:Static fonts:FontIcons.Cloud}" />
+        </views:Page2Page.IconImageSource>
+    </views:Page2Page>
+
+    <views:Page3Page>
+        <views:Page3Page.IconImageSource>
+            <FontImageSource FontFamily="materialdesignicons" Glyph="{x:Static fonts:FontIcons.Magnify}" />
+        </views:Page3Page.IconImageSource>
+    </views:Page3Page>
+
+    <views:Page4Page>
+        <views:Page4Page.IconImageSource>
+            <FontImageSource FontFamily="materialdesignicons" Glyph="{x:Static fonts:FontIcons.FaceProfile}" />
+        </views:Page4Page.IconImageSource>
+    </views:Page4Page>
+
+    <views:Page5Page>
+        <views:Page5Page.IconImageSource>
+            <FontImageSource FontFamily="materialdesignicons" Glyph="{x:Static fonts:FontIcons.HumanGreeting}" />
+        </views:Page5Page.IconImageSource>
+    </views:Page5Page>
+</TabbedPage>

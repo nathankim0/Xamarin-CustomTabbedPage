@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:local="clr-namespace:uipractice"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+                 xmlns:fonts="clr-namespace:uipractice.Fonts"
+
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.BackButtonTitle=""
+             x:Class="uipractice.MainPage">
+
+   <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="TabItemTemplate">
+                <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Image
+                        Grid.Row="0"
+                        Margin="6"
+                        HeightRequest="24"
+                        HorizontalOptions="Center"
+                        Source="{TemplateBinding CurrentIcon}"
+                        VerticalOptions="Center"
+                        WidthRequest="24" />
+                    <!--<Label
+                        Grid.Row="1"
+                        FontSize="{TemplateBinding FontSize}"
+                        HorizontalOptions="Center"
+                        Text="{TemplateBinding Text}"
+                        TextColor="{TemplateBinding CurrentTextColor}" />-->
+                </Grid>
+            </ControlTemplate>
+
+            <!--<ControlTemplate x:Key="FabTabItemTemplate">
+                <Grid>
+                    <ImageButton
+                        Margin="6"
+                        Padding="10"
+                        BackgroundColor="Chocolate"
+                        HeightRequest="60"
+                        HorizontalOptions="Center"
+                        InputTransparent="True"
+                        Source="{TemplateBinding CurrentIcon}"
+                        WidthRequest="60">
+                        <ImageButton.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Int32">
+                                <On Platform="iOS" Value="30" />
+                                <On Platform="Android" Value="60" />
+                                <On Platform="UWP" Value="24" />
+                            </OnPlatform>
+                        </ImageButton.CornerRadius>
+                        <ImageButton.IsVisible>
+                            <OnPlatform x:TypeArguments="x:Boolean">
+                                <On Platform="Android, iOS, UWP">True</On>
+                                <On Platform="macOS">False</On>
+                            </OnPlatform>
+                        </ImageButton.IsVisible>
+                    </ImageButton>
+                </Grid>
+            </ControlTemplate>-->
+
+            <Style x:Key="CustomTabStyle" TargetType="xct:TabView">
+                <Setter Property="IsTabTransitionEnabled" Value="False" />
+                <Setter Property="TabStripBackgroundColor" Value="#E6F9F9F9" />
+                <Setter Property="TabStripHeight" Value="48" />
+                <Setter Property="TabContentBackgroundColor" Value="#F5F5F5" />
+                <Setter Property="TabStripPlacement" Value="Bottom" />
+            </Style>
+
+            <Style x:Key="TabItemStyle" TargetType="xct:TabViewItem">
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="TextColor" Value="#979797" />
+                <Setter Property="TextColorSelected" Value="#FF0000" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+        <Grid>
+            <xct:TabView Style="{StaticResource CustomTabStyle}">
+
+                <xct:TabViewItem
+                    ControlTemplate="{StaticResource TabItemTemplate}"
+                    Style="{StaticResource TabItemStyle}"
+                    Text="Tab 1">
+                    <xct:TabViewItem.Icon>
+                        <FontImageSource
+                            FontFamily="materialdesignicons"
+                            Glyph="{x:Static fonts:FontIcons.Car}"
+                            Size="24"
+                            Color="#979797" />
+                    </xct:TabViewItem.Icon>
+                    <!--<xct:TabViewItem.IconSelected>
+                        <FontImageSource
+                            FontFamily="materialdesignicons"
+                            Glyph="{x:Static fonts:FontIcons.Check}"
+                            Size="24"
+                            Color="#FF0000" />
+                    </xct:TabViewItem.IconSelected>-->
+                    <local:Page1View/>
+                </xct:TabViewItem>
+
+                <!--<xct:TabViewItem
+                    ControlTemplate="{StaticResource FabTabItemTemplate}"
+                    Style="{StaticResource TabItemStyle}"
+                    TabTapped="OnFabTabTapped"
+                    Text="Tab 2">
+                    <xct:TabViewItem.Icon>
+                        <FontImageSource
+                            FontFamily="materialdesignicons"
+                            Glyph="{x:Static fonts:FontIcons.Login}"
+                            Size="24"
+                            Color="#FFFFFF" />
+                    </xct:TabViewItem.Icon>
+                        
+                </xct:TabViewItem>-->
+
+                <xct:TabViewItem
+                    ControlTemplate="{StaticResource TabItemTemplate}"
+                    Style="{StaticResource TabItemStyle}"
+                    Text="Tab 2">
+                    <xct:TabViewItem.Icon>
+                        <FontImageSource
+                            FontFamily="materialdesignicons"
+                            Glyph="{x:Static fonts:FontIcons.Download}"
+                            Size="24"
+                            Color="#979797" />
+                    </xct:TabViewItem.Icon>
+                    <local:Page2View/>
+                    <!--<xct:TabViewItem.IconSelected>
+                        <FontImageSource
+                            FontFamily="materialdesignicons"
+                            Glyph="{x:Static fonts:FontIcons.Download}"
+                            Size="24"
+                            Color="#FF0000" />
+                    </xct:TabViewItem.IconSelected>-->
+                   
+                </xct:TabViewItem>
+
+            </xct:TabView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

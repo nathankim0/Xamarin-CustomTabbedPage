@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:uipractice.Controls"
+    x:Class="uipractice.Page2View">
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+    
+
+    <controls:TitleBar Grid.Row="0"/>
+
+        <StackLayout>
+            <Label Text="page2"/>
+        </StackLayout>
+        </Grid>
+</ContentView>

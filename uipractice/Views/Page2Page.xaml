@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:uipractice.Controls"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:views="clr-namespace:uipractice.Views"
+    xmlns:fonts="clr-namespace:uipractice.Fonts"
+    ios:Page.UseSafeArea="True"
+    ios:Page.PrefersHomeIndicatorAutoHidden="True"
+    NavigationPage.BackButtonTitle=""
+    NavigationPage.HasNavigationBar="False"
+    x:Class="uipractice.Views.Page2Page">
+
+    <Grid Style="{StaticResource ContentsGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+   
+        <controls:TitleBar Grid.Row="0"/>
+
+        <!-- Dream 리스트 --> 
+        <ListView
+            Margin="0"
+            VerticalOptions="Fill"
+            x:Name="DreamListView"
+            Grid.Row="1"
+            CachingStrategy="RecycleElement"
+            HasUnevenRows="True"
+            IsPullToRefreshEnabled="True"
+            IsRefreshing="{Binding IsRefreshing}"
+            ItemTapped="DreamListView_ItemTapped"
+            ItemsSource="{Binding DreamCollection}"
+            RefreshCommand="{Binding RefreshCommand}"
+            VerticalScrollBarVisibility="Never">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="0,10,0,10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Frame Style="{StaticResource PictureFrame}">
+                                <Image
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Center"
+                                    Source="{Binding DreamImage}"
+                                    HeightRequest="120"
+                                    WidthRequest="120"
+                                    Grid.Column="0"
+                                    />
+                            </Frame>
+
+                            <Label
+                                Grid.Column="1"
+                                Text="{Binding DreamText}"
+                                Style="{StaticResource CollectionLabel}"
+                                />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+</ContentPage>
