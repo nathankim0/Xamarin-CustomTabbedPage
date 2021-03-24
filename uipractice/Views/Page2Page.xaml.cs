@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using uipractice.Models;
 using uipractice.ViewModels;
 using Xamarin.Forms;
 
@@ -13,9 +14,11 @@ namespace uipractice.Views
             BindingContext = new Page2ViewModel(Navigation);
         }
 
-        void DreamListView_ItemTapped(System.Object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        async void DreamListView_ItemTapped(System.Object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
             (sender as ListView).SelectedItem = null;
+
+            await Navigation.PushAsync(new DreamEditPage(e.Item as DreamModel));
         }
 
         protected override void OnAppearing()

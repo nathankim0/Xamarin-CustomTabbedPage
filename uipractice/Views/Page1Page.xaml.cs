@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Acr.UserDialogs;
 using uipractice.ViewModels;
 using Xamarin.Forms;
 
@@ -11,6 +12,20 @@ namespace uipractice.Views
         {
             InitializeComponent();
             BindingContext = new Page1ViewModel(Navigation);
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            UserDialogs.Instance.Toast(new ToastConfig("hello i'm Nathan.")
+                .SetDuration(TimeSpan.FromSeconds(3))
+                .SetPosition(ToastPosition.Top)
+                .SetAction(x => x
+                    .SetText("OK")
+                    .SetAction(() => UserDialogs.Instance.Alert("You clicked the primary toast button"))
+                )
+            );
         }
     }
 }

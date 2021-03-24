@@ -24,7 +24,7 @@ namespace uipractice.ViewModels
             Connectivity.ConnectivityChanged -= ConnectivityOnConnectivityChanged;
         }
 
-        private void ConnectivityOnConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+        private async void ConnectivityOnConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
         {
             IsNotConnected = e.NetworkAccess != NetworkAccess.Internet;
         }

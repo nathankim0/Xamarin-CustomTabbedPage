@@ -8,6 +8,7 @@
     xmlns:views="clr-namespace:uipractice.Views"
     xmlns:fonts="clr-namespace:uipractice.Fonts"
     ios:Page.UseSafeArea="True"
+    xmlns:custom="clr-namespace:uipractice.Customs"
     ios:Page.PrefersHomeIndicatorAutoHidden="True"
     NavigationPage.BackButtonTitle=""
     NavigationPage.HasNavigationBar="False"
@@ -16,14 +17,27 @@
      <Grid Style="{StaticResource ContentsGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
+            <RowDefinition Height="auto"/>
+
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
     
         <controls:TitleBar Grid.Row="0"/>
 
-        <StackLayout Grid.Row="1">
-            <Label Text="page1"/>
-        </StackLayout>
+         <StackLayout Grid.Row="1">
+         <Label Text="😺 Elli, 이런 Dream은 어때?" />
+         <ScrollView HorizontalScrollBarVisibility="Never" Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="0,0,0,0" AbsoluteLayout.LayoutFlags="SizeProportional">
+            <FlexLayout Direction="Row" BindableLayout.ItemsSource="{Binding CategoryList}" Position="Relative" AlignItems="Start" FlowDirection="LeftToRight" JustifyContent="SpaceEvenly">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="8,0" FlexLayout.AlignSelf="Start">
+                            <custom:CustomCard/>
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+        </ScrollView>
+             </StackLayout>
     </Grid>
 
 </ContentPage>

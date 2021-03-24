@@ -12,7 +12,7 @@
             android:TabbedPage.OffscreenPageLimit="4"
             ios:Page.UseSafeArea="True"
             ios:Page.PrefersHomeIndicatorAutoHidden="True"
-            NavigationPage.BackButtonTitle=""
+                 NavigationPage.BackButtonTitle=""
             NavigationPage.HasNavigationBar="False"
             BarBackgroundColor="{StaticResource WhiteColor}"
             SelectedTabColor="{AppThemeBinding Dark={StaticResource WhiteColor},Light={StaticResource BlackColor}}"

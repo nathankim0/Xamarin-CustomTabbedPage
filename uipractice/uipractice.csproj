@@ -14,6 +14,9 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="1.1.0" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.483" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Fonts\materialdesignicons.ttf" />
@@ -33,6 +36,7 @@
     <Folder Include="Controls\" />
     <Folder Include="Fonts\" />
     <Folder Include="Renderers\" />
+    <Folder Include="Customs\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\MainPage.xaml.cs" />
